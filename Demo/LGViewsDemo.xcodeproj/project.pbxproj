@@ -174,6 +174,7 @@
 				4AD364A61AAF5FD900EE6F1A /* Frameworks */,
 				4AD364A71AAF5FD900EE6F1A /* Resources */,
 				AE4A0B695BE94DC89AC1A3F1 /* Copy Pods Resources */,
+				934E34AF53774BD52672296A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +229,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		934E34AF53774BD52672296A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LGViewsDemo/Pods-LGViewsDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AE4A0B695BE94DC89AC1A3F1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
