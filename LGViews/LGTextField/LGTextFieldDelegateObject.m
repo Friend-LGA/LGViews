@@ -35,7 +35,7 @@
 
 - (void)dealloc
 {
-    self.delegateLG = nil;
+    _delegateLG = nil;
 }
 
 #pragma mark - UITextField Delegate

@@ -58,21 +58,42 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+
+    [self initialize];
+}
+
 - (void)initialize
 {
-    _delegateObject = [LGTextFieldDelegateObject new];
-    [super setDelegate:_delegateObject];
+    CGFloat inset = 8.f;
+
+    _textEdgeInsets = UIEdgeInsetsMake(0.f, inset, 0.f, inset);
+    _leftViewEdgeInsets = UIEdgeInsetsMake(0.f, inset, 0.f, 0.f);
+    _rightViewEdgeInsets = UIEdgeInsetsMake(0.f, 0.f, 0.f, inset);
+
+    [self createDelegateObject];
+}
+
+- (void)createDelegateObject
+{
+    if (!_delegateObject)
+    {
+        _delegateObject = [LGTextFieldDelegateObject new];
+        [super setDelegate:_delegateObject];
+    }
 }
 
 #pragma mark - Dealloc
 
 - (void)dealloc
 {
-    self.delegateObject = nil;
+    _delegateObject = nil;
     self.delegateLG = nil;
 }
 
-#pragma mark -
+#pragma mark - Layout
 
 - (void)layoutSubviews
 {
@@ -133,6 +154,8 @@
 
 - (void)setDelegateLG:(id<LGTextFieldDelegate>)delegateLG
 {
+    [self createDelegateObject];
+    
     _delegateObject.delegateLG = delegateLG;
 }
 

@@ -47,17 +47,19 @@
 
 @end
 
+IB_DESIGNABLE
+
 @interface LGTextField : UITextField
 
-@property (assign, nonatomic) id<LGTextFieldDelegate> delegateLG;
+@property (assign, nonatomic) IBOutlet id<LGTextFieldDelegate> delegateLG;
 
-@property (assign, nonatomic) NSUInteger lengthMax;
+@property (assign, nonatomic) IBInspectable NSUInteger lengthMax;
 
-@property (assign, nonatomic) UIEdgeInsets textEdgeInsets;
-@property (assign, nonatomic) UIEdgeInsets leftViewEdgeInsets;
-@property (assign, nonatomic) UIEdgeInsets rightViewEdgeInsets;
+@property (assign, nonatomic) IBInspectable UIEdgeInsets textEdgeInsets;
+@property (assign, nonatomic) IBInspectable UIEdgeInsets leftViewEdgeInsets;
+@property (assign, nonatomic) IBInspectable UIEdgeInsets rightViewEdgeInsets;
 
-@property (assign, nonatomic, getter=isTrimmingWhitespaceAndNewline) BOOL trimmingWhitespaceAndNewline;
+@property (assign, nonatomic, getter=isTrimmingWhitespaceAndNewline) IBInspectable BOOL trimmingWhitespaceAndNewline;
 
 - (CGRect)caretRect;
 - (CGPoint)caretPosition;
