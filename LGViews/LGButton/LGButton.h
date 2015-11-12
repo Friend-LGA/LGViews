@@ -29,43 +29,43 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface LGButton : UIButton
 
-typedef enum
+typedef NS_ENUM(NSUInteger, LGButtonImagePosition)
 {
     LGButtonImagePositionLeft   = 0,
     LGButtonImagePositionRight  = 1,
     LGButtonImagePositionTop    = 2,
     LGButtonImagePositionBottom = 3,
     LGButtonImagePositionCenter = 4
-}
-LGButtonImagePosition;
+};
 
-typedef enum
+typedef NS_ENUM(NSUInteger, LGButtonTitlePosition)
 {
     LGButtonTitlePositionRight  = 0,
     LGButtonTitlePositionLeft   = 1,
     LGButtonTitlePositionBottom = 2,
     LGButtonTitlePositionTop    = 3,
     LGButtonTitlePositionCenter = 4
-}
-LGButtonTitlePosition;
+};
 
-@property (assign, nonatomic) LGButtonImagePosition imagePosition;
+@property (assign, nonatomic) IBInspectable LGButtonImagePosition imagePosition;
 /** Default is 6.f */
-@property (assign, nonatomic) CGFloat imageSpacingFromTitle;
-@property (assign, nonatomic) CGPoint imageOffset;
+@property (assign, nonatomic) IBInspectable CGFloat imageSpacingFromTitle;
+@property (assign, nonatomic) IBInspectable CGPoint imageOffset;
 
-@property (assign, nonatomic) LGButtonTitlePosition titlePosition;
+@property (assign, nonatomic) IBInspectable LGButtonTitlePosition titlePosition;
 /** Default is 6.f */
-@property (assign, nonatomic) CGFloat titleSpacingFromImage;
-@property (assign, nonatomic) CGPoint titleOffset;
+@property (assign, nonatomic) IBInspectable CGFloat titleSpacingFromImage;
+@property (assign, nonatomic) IBInspectable CGPoint titleOffset;
 
-@property (strong, nonatomic, readonly) UIImage *maskImage;
+@property (strong, nonatomic, readonly) IBInspectable UIImage *maskImage;
 
-@property (assign, nonatomic, getter=isTitleLabelWidthUnlimited)    BOOL titleLabelWidthUnlimited;
-@property (assign, nonatomic, getter=isAdjustsAlphaWhenHighlighted) BOOL adjustsAlphaWhenHighlighted;
-@property (assign, nonatomic, getter=isAnimatedStateChanging)       BOOL animatedStateChanging;
+@property (assign, nonatomic, getter=isTitleLabelWidthUnlimited)    IBInspectable BOOL titleLabelWidthUnlimited;
+@property (assign, nonatomic, getter=isAdjustsAlphaWhenHighlighted) IBInspectable BOOL adjustsAlphaWhenHighlighted;
+@property (assign, nonatomic, getter=isAnimatedStateChanging)       IBInspectable BOOL animatedStateChanging;
 
 - (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state;
 

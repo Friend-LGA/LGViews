@@ -7,8 +7,7 @@
 //
 
 #import "TextFieldViewController.h"
-#import "LGHelper.h"
-#import "LGTextField.h" // or #import "LGViews.h"
+#import "LGTextField.h"
 
 @interface TextFieldViewController () <UIGestureRecognizerDelegate>
 
@@ -23,12 +22,12 @@
 
 @implementation TextFieldViewController
 
-- (id)initWithTitle:(NSString *)title
+- (id)init
 {
     self = [super init];
     if (self)
     {
-        self.title = title;
+        self.title = @"LGTextField";
         
         _scrollView = [UIScrollView new];
         _scrollView.backgroundColor = [UIColor whiteColor];
@@ -167,17 +166,41 @@
 
 - (void)keyboardShowHideAction:(NSNotification *)notification
 {
-    [LGHelper keyboardAnimateWithNotificationUserInfo:notification.userInfo
-                                           animations:^(CGFloat keyboardHeight)
-     {
-         CGFloat bottomInset = (notification.name == UIKeyboardWillShowNotification ? keyboardHeight : 0.f);
-         
-         _scrollView.contentInset = UIEdgeInsetsMake(_scrollView.contentInset.top, 0.f, bottomInset, 0.f);
-         _scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(_scrollView.contentInset.top, 0.f, bottomInset, 0.f);
-         
-         if (notification.name == UIKeyboardWillShowNotification)
-             [LGHelper scrollView:_scrollView scrollFirstResponderToVisibleAnimated:NO];
-     }];
+    CGFloat keyboardHeight = (notification.userInfo[UIKeyboardFrameEndUserInfoKey] ? [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height : 0.f);
+
+    if (!keyboardHeight) return;
+
+    NSTimeInterval animationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    int animationCurve = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+
+    CGFloat bottomInset = (notification.name == UIKeyboardWillShowNotification ? keyboardHeight : 0.f);
+
+    _scrollView.contentInset = UIEdgeInsetsMake(_scrollView.contentInset.top, 0.f, bottomInset, 0.f);
+    _scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(_scrollView.contentInset.top, 0.f, bottomInset, 0.f);
+
+    if (notification.name == UIKeyboardWillShowNotification)
+        [_scrollView scrollRectToVisible:[self firstResponder].frame animated:NO];
+
+    [UIView commitAnimations];
+}
+
+- (UIView *)firstResponder
+{
+    UIView *firstResponderView = nil;
+
+    for (UIView *subview in _scrollView.subviews)
+    {
+        if (subview.canBecomeFirstResponder && subview.isFirstResponder)
+            firstResponderView = subview;
+
+        if (firstResponderView) break;
+    }
+
+    return firstResponderView;
 }
 
 #pragma mark - UIGestureRecognizer Delegate

@@ -29,8 +29,10 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface LGLabel : UILabel
 
-@property (assign, nonatomic) UIEdgeInsets contentEdgeInsets;
+@property (assign, nonatomic) IBInspectable UIEdgeInsets contentEdgeInsets;
 
 @end

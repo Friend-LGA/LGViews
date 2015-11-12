@@ -11,6 +11,7 @@
 #import "LabelViewController.h"
 #import "TextFieldViewController.h"
 #import "TextViewViewController.h"
+#import "RadioButtonsViewController.h"
 
 @interface TableViewController ()
 
@@ -25,12 +26,13 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self)
     {
-        self.title = @"LGRefreshView";
+        self.title = @"LGViews";
         
         _titlesArray = @[@"LGButton",
                          @"LGLabel",
                          @"LGTextField",
-                         @"LGTextView"];
+                         @"LGTextView",
+                         @"LGRadioButtonsView"];
                 
         [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     }
@@ -70,22 +72,27 @@
 {
     if (indexPath.row == 0)
     {
-        ButtonViewController *viewController = [[ButtonViewController alloc] initWithTitle:_titlesArray[indexPath.row]];
+        ButtonViewController *viewController = [ButtonViewController new];
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else if (indexPath.row == 1)
     {
-        LabelViewController *viewController = [[LabelViewController alloc] initWithTitle:_titlesArray[indexPath.row]];
+        LabelViewController *viewController = [LabelViewController new];
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else if (indexPath.row == 2)
     {
-        TextFieldViewController *viewController = [[TextFieldViewController alloc] initWithTitle:_titlesArray[indexPath.row]];
+        TextFieldViewController *viewController = [TextFieldViewController new];
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else if (indexPath.row == 3)
     {
-        TextViewViewController *viewController = [[TextViewViewController alloc] initWithTitle:_titlesArray[indexPath.row]];
+        TextViewViewController *viewController = [TextViewViewController new];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else if (indexPath.row == 4)
+    {
+        RadioButtonsViewController *viewController = [RadioButtonsViewController new];
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }

@@ -7,7 +7,7 @@
 //
 
 #import "ButtonViewController.h"
-#import "LGButton.h" // or #import "LGViews.h"
+#import "LGButton.h"
 
 @interface ButtonViewController ()
 
@@ -36,12 +36,12 @@
 
 @implementation ButtonViewController
 
-- (id)initWithTitle:(NSString *)title
+- (id)init
 {
     self = [super init];
     if (self)
     {
-        self.title = title;
+        self.title = @"LGButton";
         
         // -----
         

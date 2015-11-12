@@ -10,6 +10,4 @@
 
 @interface ButtonViewController : UIViewController
 
-- (id)initWithTitle:(NSString *)title;
-
 @end

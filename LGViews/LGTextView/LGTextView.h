@@ -55,23 +55,25 @@
 
 @end
 
+IB_DESIGNABLE
+
 @interface LGTextView : UITextView
 
 @property (assign, nonatomic) id<LGTextViewDelegate> delegateLG;
 
-@property (strong, nonatomic) NSString *placeholder;
-@property (strong, nonatomic) UIColor  *placeholderColor;
+@property (strong, nonatomic) IBInspectable NSString *placeholder;
+@property (strong, nonatomic) IBInspectable UIColor  *placeholderColor;
 
-@property (assign, nonatomic) NSUInteger numberOfLinesMin;
-@property (assign, nonatomic) NSUInteger numberOfLinesMax;
-@property (assign, nonatomic) CGFloat    heightMin;
-@property (assign, nonatomic) CGFloat    heightMax;
+@property (assign, nonatomic) IBInspectable NSUInteger numberOfLinesMin;
+@property (assign, nonatomic) IBInspectable NSUInteger numberOfLinesMax;
+@property (assign, nonatomic) IBInspectable CGFloat    heightMin;
+@property (assign, nonatomic) IBInspectable CGFloat    heightMax;
 
-@property (assign, nonatomic) NSUInteger lengthMax;
+@property (assign, nonatomic) IBInspectable NSUInteger lengthMax;
 
-@property (assign, nonatomic, getter=isAnimatedResize) BOOL animatedResize;
+@property (assign, nonatomic, getter=isAnimatedResize) IBInspectable BOOL animatedResize;
 
-@property (assign, nonatomic, getter=isTrimmingWhitespaceAndNewline) BOOL trimmingWhitespaceAndNewline;
+@property (assign, nonatomic, getter=isTrimmingWhitespaceAndNewline) IBInspectable BOOL trimmingWhitespaceAndNewline;
 
 /** Do not forget about weak referens to self */
 @property (strong, nonatomic) void (^willResizeHandler)(LGTextView *textView, CGSize sizeNew);

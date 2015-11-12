@@ -31,13 +31,12 @@
 
 @interface LGButton ()
 
-typedef enum
+typedef NS_ENUM(NSUInteger, LGButtonMaskImageType)
 {
-    LGButtonMaskImageTypeNone,
-    LGButtonMaskImageTypeAlpha,
-    LGButtonMaskImageTypeBlackAndWhite
-}
-LGButtonMaskImageType;
+    LGButtonMaskImageTypeNone          = 0,
+    LGButtonMaskImageTypeAlpha         = 1,
+    LGButtonMaskImageTypeBlackAndWhite = 2
+};
 
 @property (strong, nonatomic) NSMutableArray *maskArray;
 @property (assign, nonatomic) LGButtonMaskImageType maskType;
@@ -286,11 +285,11 @@ LGButtonMaskImageType;
             }
             else if (_imagePosition == LGButtonImagePositionRight)
             {
-                imageViewFrame.origin.x = titleLabelFrame.origin.x+titleLabelSize.width+self.titleEdgeInsets.right+imageSpaceFromTitle+self.imageEdgeInsets.left;
+                titleLabelFrame.origin.x = imageViewFrame.origin.x-titleLabelSize.width-self.imageEdgeInsets.right-imageSpaceFromTitle-self.titleEdgeInsets.right;
             }
             else if (_imagePosition == LGButtonImagePositionLeft)
             {
-                titleLabelFrame.origin.x = imageViewFrame.origin.x+imageViewSize.width+self.imageEdgeInsets.right+imageSpaceFromTitle+self.titleEdgeInsets.left;
+                imageViewFrame.origin.x = titleLabelFrame.origin.x-imageViewSize.width-self.titleEdgeInsets.right-imageSpaceFromTitle-self.imageEdgeInsets.left;
             }
         }
     }

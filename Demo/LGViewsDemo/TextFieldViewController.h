@@ -10,6 +10,4 @@
 
 @interface TextFieldViewController : UIViewController
 
-- (id)initWithTitle:(NSString *)title;
-
 @end

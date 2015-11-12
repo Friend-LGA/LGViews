@@ -7,7 +7,7 @@
 //
 
 #import "LabelViewController.h"
-#import "LGLabel.h" // or #import "LGViews.h"
+#import "LGLabel.h"
 
 @interface LabelViewController ()
 
@@ -24,12 +24,12 @@
 
 @implementation LabelViewController
 
-- (id)initWithTitle:(NSString *)title
+- (id)init
 {
     self = [super init];
     if (self)
     {
-        self.title = title;
+        self.title = @"LGLabel";
         
         // -----
         

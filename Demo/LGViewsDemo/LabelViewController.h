@@ -10,6 +10,4 @@
 
 @interface LabelViewController : UIViewController
 
-- (id)initWithTitle:(NSString *)title;
-
 @end
