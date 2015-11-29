@@ -9,12 +9,12 @@ Classes extends abilities of UILabel, UIButton, UITextField and UITextView.
 
 ## Preview
 
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/Preview.gif" width="230"/>
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/1.png" width="230"/>
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/2.png" width="230"/>
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/3.png" width="230"/>
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/4.png" width="230"/>
-<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/5.png" width="230"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/Preview.gif" width="226"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/1.png" width="226"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/2.png" width="226"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/3.png" width="226"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/4.png" width="226"/>
+<img src="https://raw.githubusercontent.com/Friend-LGA/ReadmeFiles/master/LGViews/5.png" width="226"/>
 
 ## Installation
 
